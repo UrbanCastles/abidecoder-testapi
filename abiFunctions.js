@@ -50,7 +50,7 @@ function DecodeInputValues(requestParams)
             resultJson.push({Name: resultArray.names[inputIndex], Type: resultArray.types[inputIndex], Data: resultArray.inputs[inputIndex]});
         }
         
-        return JSON.stringify(resultJson,  null, 3);
+        return JSON.stringify(resultJson);
     }
     catch (err) {
         return "ERROR: " + err;
