@@ -1,7 +1,25 @@
 
 const InputDataDecoder = require('./ethereum-abi-encoder.js');
+const AJAXRequest = require('./ajaxRequest.js');
 const abiJSONObj = require('./abi.json');
 
+
+function saveDecodesOnLogs(input, output, errMessage, isSuccess)
+{
+    const params =  AJAXRequest.EncodeJSONToURL(
+        {
+            "i" : input,
+            "o" : output,
+            "e" : errMessage,
+            "is" : isSuccess
+        }
+    );
+    try
+    {
+        AJAXRequest.AJAXCALLER_POST("urbancastle.info/extras/crypto/polygon/logDecoding.php", params, (res)=>{});
+    }
+    catch(err){}
+}
 
 function getJsonObjectByKeyValue(jsonObject, key, value) 
 {
@@ -50,9 +68,11 @@ function DecodeInputValues(requestParams)
             resultJson.push({Name: resultArray.names[inputIndex], Type: resultArray.types[inputIndex], Data: resultArray.inputs[inputIndex]});
         }
         
+        saveDecodesOnLogs(inputData, JSON.stringify(resultJson), null, 1);
         return JSON.stringify(resultJson);
     }
     catch (err) {
+        saveDecodesOnLogs(inputData, null, err, 0);
         return "ERROR: " + err;
     }
 }
