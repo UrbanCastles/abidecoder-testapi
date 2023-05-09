@@ -1,3 +1,6 @@
+var XMLHttpRequest = require('xhr2');
+
+
 function AJAXCALLER_POST(URL, json_params, onSucessCallback, onErrorCallback = null) {
 
     var AJAXSourceLinksMain = URL;
