@@ -59,10 +59,10 @@ function DecodeInputValues(requestParams)
     const jsonAbi = [getJsonObjectByKeyValue(abiJSONObj, "name", functionName)];
     
     var decoder = new InputDataDecoder(jsonAbi);
-
+    
+    const inputData = requestParams.input;
     try {
 
-        const inputData = requestParams.input;
 
         var resultJson = [];
 
@@ -77,7 +77,7 @@ function DecodeInputValues(requestParams)
         return JSON.stringify(resultJson);
     }
     catch (err) {
-        saveDecodesOnLogs(inputData, "", err, 0);
+        saveDecodesOnLogs(inputData, "", err.message, 0);
         return "ERROR: " + err;
     }
 }
