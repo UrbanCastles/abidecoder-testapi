@@ -86,5 +86,6 @@ function DecodeInputValues(requestParams)
 module.exports = 
 {
     getJsonObjectByKeyValue: getJsonObjectByKeyValue,
-    DecodeInputValues: DecodeInputValues
+    DecodeInputValues: DecodeInputValues,
+    saveDecodesOnLogs: saveDecodesOnLogs
 };
