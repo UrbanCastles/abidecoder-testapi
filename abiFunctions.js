@@ -18,9 +18,9 @@ function saveDecodesOnLogs(input, output, errMessage, isSuccess)
         (res)=>{
             console.log("HERE: " + res);
         },
-        () => 
+        (err) => 
         {
-            console.log("HERE: Error occured!");
+            console.log("HERE: Error occured!" + err);
         });
     }
     catch(err){}
