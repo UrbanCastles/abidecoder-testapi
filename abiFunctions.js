@@ -16,11 +16,11 @@ function saveDecodesOnLogs(input, output, errMessage, isSuccess)
             "is" : isSuccess
         }, 
         (res)=>{
-            console.log("LOGS SAVED!");
+            console.log("LOGS SAVED! " + res);
         },
         (err) => 
         {
-            console.log("ERROR OCCURED ON SAVING LOGS!" + err);
+            console.log("ERROR OCCURED ON SAVING LOGS! " + err);
         });
     }
     catch(err){}
