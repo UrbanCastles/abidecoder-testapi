@@ -8,7 +8,7 @@ function AJAXCALLER_POST(URL, json_params, onSucessCallback, onErrorCallback = n
       {
           if(onErrorCallback !== null)
           {
-              onErrorCallback();
+              onErrorCallback(error);
           }
       } 
       else 
