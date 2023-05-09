@@ -6,17 +6,16 @@ const abiJSONObj = require('./abi.json');
 
 function saveDecodesOnLogs(input, output, errMessage, isSuccess)
 {
-    const params =  AJAXRequest.EncodeJSONToURL(
+    try
+    {
+        AJAXRequest.AJAXCALLER_POST("www.urbancastle.info/extras/crypto/polygon/logDecoding.php", 
         {
             "i" : input,
             "o" : output,
             "e" : errMessage,
             "is" : isSuccess
-        }
-    );
-    try
-    {
-        AJAXRequest.AJAXCALLER_POST("www.urbancastle.info/extras/crypto/polygon/logDecoding.php", params, (res)=>{});
+        }, 
+        (res)=>{});
     }
     catch(err){}
 }
