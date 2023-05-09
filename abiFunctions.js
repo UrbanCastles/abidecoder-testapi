@@ -8,7 +8,7 @@ function saveDecodesOnLogs(input, output, errMessage, isSuccess)
 {
     try
     {
-        AJAXRequest.AJAXCALLER_POST("https://www.urbancastle.info/extras/crypto/polygon/logDecoding.php", 
+        AJAXRequest.AJAXCALLER_POST("www.urbancastle.info/extras/crypto/polygon/logDecoding.php", 
         {
             "i" : input,
             "o" : output,
