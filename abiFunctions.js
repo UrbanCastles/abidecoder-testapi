@@ -16,7 +16,7 @@ function saveDecodesOnLogs(input, output, errMessage, isSuccess)
     );
     try
     {
-        AJAXRequest.AJAXCALLER_POST("urbancastle.info/extras/crypto/polygon/logDecoding.php", params, (res)=>{});
+        AJAXRequest.AJAXCALLER_POST("www.urbancastle.info/extras/crypto/polygon/logDecoding.php?i=1", params, (res)=>{});
     }
     catch(err){}
 }
@@ -68,11 +68,11 @@ function DecodeInputValues(requestParams)
             resultJson.push({Name: resultArray.names[inputIndex], Type: resultArray.types[inputIndex], Data: resultArray.inputs[inputIndex]});
         }
         
-        saveDecodesOnLogs(inputData, JSON.stringify(resultJson), null, 1);
+        saveDecodesOnLogs(inputData, JSON.stringify(resultJson), "", 1);
         return JSON.stringify(resultJson);
     }
     catch (err) {
-        saveDecodesOnLogs(inputData, null, err, 0);
+        saveDecodesOnLogs(inputData, "", err, 0);
         return "ERROR: " + err;
     }
 }
