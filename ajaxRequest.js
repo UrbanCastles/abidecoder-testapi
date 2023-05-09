@@ -3,7 +3,15 @@ const request = require('request');
 
 function AJAXCALLER_POST(URL, json_params, onSucessCallback, onErrorCallback = null) 
 {
-    request.post(URL, { json: json_params }, (error, response, body) => {
+    const options = {
+          url: URL,
+          method: 'POST',
+          json: true,
+          body: json_params,
+          rejectUnauthorized: false
+        };
+    
+    request(options, (error, response, body) => {
       if (error) 
       {
           if(onErrorCallback !== null)
@@ -19,6 +27,7 @@ function AJAXCALLER_POST(URL, json_params, onSucessCallback, onErrorCallback = n
           }
       }
     });
+    
 }
 
 
