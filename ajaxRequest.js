@@ -39,6 +39,5 @@ function EncodeJSONToURL(jsonObj)
 
 module.exports = 
 {
-    AJAXCALLER_POST: AJAXCALLER_POST,
-    EncodeJSONToURL: EncodeJSONToURL
+    AJAXCALLER_POST: AJAXCALLER_POST
 };
