@@ -1,10 +1,10 @@
 const request = require('request');
 
 
-function AJAXCALLER_POST(URL, json_params, onSucessCallback, onErrorCallback = null) 
+function AJAXCALLER_POST(URLLink, json_params, onSucessCallback, onErrorCallback = null) 
 {
     const options = {
-          url: URL,
+          url: URLLink,
           method: 'POST',
           json: true,
           body: json_params,
