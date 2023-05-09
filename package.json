@@ -8,7 +8,7 @@
    "dependencies": {
     "express": "^4.18.2",
     "cors": "^2.8.5",
-    "xhr2": "^0.2.1"
+    "request": "^2.88.2"
   },
   "scripts": {
     "start": "node index.js"
