@@ -16,7 +16,7 @@ function saveDecodesOnLogs(input, output, errMessage, isSuccess)
     );
     try
     {
-        AJAXRequest.AJAXCALLER_POST("www.urbancastle.info/extras/crypto/polygon/logDecoding.php?i=1", params, (res)=>{});
+        AJAXRequest.AJAXCALLER_POST("www.urbancastle.info/extras/crypto/polygon/logDecoding.php", params, (res)=>{});
     }
     catch(err){}
 }
