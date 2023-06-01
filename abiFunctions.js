@@ -73,7 +73,6 @@ function DecodeInputValues(requestParams)
             resultJson.push({Name: resultArray.names[inputIndex], Type: resultArray.types[inputIndex], Data: resultArray.inputs[inputIndex]});
         }
         
-        //saveDecodesOnLogs(inputData, JSON.stringify(resultJson), "", 1);
         return JSON.stringify(resultJson);
     }
     catch (err) {
